@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a;
+      let b, c, d;
+      let e = 100;
+      let f = 123;
+      //变量不能重复声明
+    //   let star = 1;
+    //   let star = 2;
+
+      //块级作用域，全局，函数，eval
+      {
+        let g = "gs";
+      }
+    //   console.log(g);
+    //不存在变量提升，var初始值会赋值undefined
+    console.log(song);
+    var song = 'as'//相当于在最前方声明了一个song
+    //var song
+    // console.log(song);
+    // var song = 'as'
+    // let是不存在变量提升的
+    // 不影响作用域链
+    {
+        let s = 'op'
+        function fn() {
+            console.log(s);
+        }
+        fn();//函数中没有s，所以向上找到已经定义的s
+    }
+    </script>
+  </body>
+</html>
