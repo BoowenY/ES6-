@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //解构赋值
+    //1.数组结构
+    const f = ["1", '2', "3", "p"]
+    let [x, l, z, s] = f;
+    console.log(x);
+    console.log(l);
+    console.log(z);
+    console.log(s);
+    //2.对象结构
+    const op = {
+        age: 12,
+        name: 'ppp',
+        xp: function() {
+            console.log("i can do");
+        }
+    }
+    let {name, age, xp} = op;
+    console.log(name);
+    console.log(age);
+    console.log(xp);
+    xp();
+    </script>
+</body>
+</html>
