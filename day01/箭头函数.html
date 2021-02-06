@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //使用箭头定义函数
+        let fn = a => (
+            a += 1,
+            a += 1
+        )
+        console.log(fn(1));//直接省略return
+        //箭头函数的this是静态的，始终指向函数声明时所在作用域下的this
+        //无论是bind，还是call，是不会改变的
+        function getName () {
+            console.log(this.name);
+        }
+        let getName2 = () => (console.log(this.name),console.log("222"))
+        window.name = "sss"
+        const s = {
+            name: 'ppp'
+        }
+        getName();
+        getName2();
+        console.log("-----");
+        getName.call(s)
+        getName2.call(s)
+        //2.不能作为构造实例化对象
+        // let Person = (name, age) => {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // let me = new Person("xiao", 30)
+        // console.log(me);
+        //3.不能使用arguments变量,arguments用于保存实参
+        // let fff = () => {
+        //     console.log(arguments);
+        // }
+        // fff(1, 2, 3)
+        //箭头函数的简写
+        //1.形参只有一个时候可以省略小括号
+        //2.省略花括号，当代码只有一条语句,而且此时的return必须省略
+        //函数语句的执行结果就是函数的返回值
+        let pow = n => n*n
+        console.log(pow(2));
+
+    </script>
+</body>
+</html>
