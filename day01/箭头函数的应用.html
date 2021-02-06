@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: #58a;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ad"></div>
+    <script>
+      let ad = document.getElementById("ad");
+      ad.addEventListener("click", function () {
+        let that = this;
+        setTimeout(
+          //     function(){
+          //     console.log(this);
+          //     console.log(that);
+          //     that.style.background = 'pink'
+          // }, 2000
+          () => {
+            this.style.background = "pink";
+          },
+          2000
+        );
+      });//箭头函数的静态this找上一层的this，正是指向ad
+
+      const arr = [1, 6, 9, 10, 100, 25];
+    //   const res = arr.filter(function(item){
+    //       if(item % 2 === 0) return true;
+    //       else return false;
+    //   })
+    const res = arr.filter(item => item % 2 === 0)
+    //箭头函数适合与this无关的回调函数，DOM元素的事件回调不合适，也不适合对象的方法
+    {
+        name: 's',
+        getName: () => {}
+    }
+    console.log(res);
+    </script>
+  </body>
+</html>
