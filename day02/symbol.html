@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s = Symbol();
+        console.log(s, typeof s);
+        //Symbol是唯一的，内部实现了唯一性
+        let s2 = Symbol('sgb');
+        let s3 = Symbol('sgb');
+        console.log(s2 == s3);
+        //Symbol.for创建
+        let s4= Symbol.for('ssss')
+        let s5= Symbol.for('ssss')
+        console.log(s4, typeof s4);
+        console.log(s4 === s5);//true
+        //symbol创建的变量不能参与运算
+        //对象中添加Symbol属性
+        let methods = {
+            up: Symbol(),
+            down: Symbol()
+        }
+        let game = {}
+        game[methods.up] = function() {
+            console.log('up up');
+        }
+
+        let youxi = {
+            name: "狼人杀",
+            [Symbol('say')]: function () {
+                console.log('zibao');
+            }
+        }
+        console.log(youxi);
+    </script>
+</body>
+</html>
